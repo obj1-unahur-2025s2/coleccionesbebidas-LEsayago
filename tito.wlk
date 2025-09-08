@@ -29,12 +29,21 @@ object cianuro {
 object terere {
   method rendimiento(cantidad) = 1.max(cantidad * 0.1)
 }
-
-object licuadoDeFrutas {
+/*se puede modelar frutas, pero yo le pase directamente los nutrientes*/
+object licuado {
   var nutrientes = 0
+
+  method rendimiento(cantidad) {
+    return nutrientes * cantidad
+  }
+
+  method agregarFruta(cantidad) {
+    nutrientes += cantidad
+  }
+
 }
 
-object agua {
+object aguaSaborizada {
   
 }
 
