@@ -1,3 +1,5 @@
+import bebidas-LEsayago.bebidas.*
+import bebidas-LEsayago.voluntario.*
 import tito.*
 
 describe "test de tito" {
@@ -28,5 +30,18 @@ describe "test de tito" {
         tito.consumir(5, cianuro)
         assert.equals(0,tito.velocidad())
     }
+//ver codigo completo
+    test "tito consume licuado de mandarina y naranja"{
+        licuado.agregarIngrediente(mandarina.nutrientes())
+        licuado.agregarIngrediente(manzana.nutrientes())
+        
+        tito.consumir(3, licuado)
+        assert.equals(15, tito.velocidad())
+    }
+
+    test "tito toma agua saborizada con whisky" {
+      aguaSaborizada.saborizar(whisky)
+    }
+
 
 }

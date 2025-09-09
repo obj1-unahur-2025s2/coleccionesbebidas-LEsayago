@@ -31,20 +31,40 @@ object terere {
 }
 /*se puede modelar frutas, pero yo le pase directamente los nutrientes*/
 object licuado {
-  var nutrientes = 0
+  const  nutrientes = []
 
   method rendimiento(cantidad) {
-    return nutrientes * cantidad
+    return nutrientes.sum() * cantidad
   }
 
-  method agregarFruta(cantidad) {
-    nutrientes += cantidad
+  method agregarIngrediente(cantidad) {
+    nutrientes.add(cantidad)
   }
 
 }
 
+object naranja {
+    method nutrientes() = 10
+}
+
+object mandarina {
+    method nutrientes() = 5
+}
+
+object manzana {
+    method nutrientes() = 4
+}
+
 object aguaSaborizada {
-  
+    var saborizante = terere
+
+    method saborizar(unaBebida) {
+      saborizante = unaBebida
+    }
+
+    method rendimiento(cantidad) {
+        return 1 + saborizante.rendimiento(cantidad/4)
+    }
 }
 
 object coctel {
